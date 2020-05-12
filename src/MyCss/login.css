@@ -1,0 +1,130 @@
+body{
+    
+    margin: 0px 0px 0px 0px;
+}
+.login{
+    display: flex;
+}
+#leftLogin{
+    width: 550px;
+    height: auto;
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    background-color:whitesmoke; 
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;  
+   
+}
+#rightLogin{
+    width: 100vw;
+    height: auto;
+    order: 1;
+    background-image: url('../img/coronavirus-2019-ncov-virus-background-with-disease-cells-covid-19-corona-virus-outbreaking-pandemic-medical-health-risk-concept_139523-181.jpg');
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media only screen and (max-width: 767px){
+.login{
+    flex-direction: column-reverse;
+}
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+    .login{
+        flex-direction: row;
+    }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+    #leftLogin{
+    width: 385px;
+    height: auto;
+    order: 2;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+}
+@media only screen and (max-width: 767px){
+    #leftLogin {
+        width: 100vw;
+        height: calc(100vh - 60px);
+        order: 1
+}
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 768px)
+{
+    #rightLogin{
+    width: calc(100vw - 385px);
+    height: auto;
+    order: 2;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+}
+@media only screen and (max-width: 767px)
+{
+    #rightLogin{
+    width: 100vw;
+    height: 60px;
+    order: 2;
+}
+
+}
+.logo {
+    bottom: 0px;
+    position: fixed;
+    margin: 0px 0px 50px 50px;
+}
+.css-v5g2u3 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 593px;
+    width: 452px;
+    position: absolute;
+    margin: auto 0px auto auto;
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 768px)
+{
+    .css-1axz6b9 {
+    display: block;
+}
+}
+@media only screen and (max-width: 767px)
+{
+    .css-1axz6b9 {
+    display: none;
+}
+}
+#sysName{
+    margin-left: 25px;
+    color: white;
+    text-shadow: horizontal-offset vertical-offset blur color;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+.logo{
+    color: white;
+    text-shadow: horizontal-offset vertical-offset blur color;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+.regis{
+    display: flex;
+}
+from.BtnRegis{
+    margin-top: 14px;
+    margin-left: 12px;
+}
