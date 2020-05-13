@@ -1,18 +1,10 @@
 
 import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -35,9 +27,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Register() {
-  
+export default function Register(props) {
   const classes = useStyles();
+  function handleKey(e){
+    if(e.target.name === 'firstName'){
+      props.seting({...props.value,fname:e.target.value})
+    }else if(e.target.name === 'lastName'){
+      props.seting({...props.value,lname:e.target.value})
+    }else if(e.target.name === 'email'){
+      props.seting({...props.value,email:e.target.value})
+    }else if(e.target.name === 'password'){
+      props.seting({...props.value,PWD:e.target.value})
+    }else if(e.target.name === 'phone'){
+      props.seting({...props.value,phoneNo:e.target.value})
+    }
+  }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -55,6 +59,8 @@ export default function Register() {
                 id="firstName"
                 label="First Name"
                 autoFocus
+                value={props.value.fname}
+                onChange={handleKey}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -66,6 +72,8 @@ export default function Register() {
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
+                value={props.value.lname}
+                onChange={handleKey}
               />
             </Grid>
             <Grid item xs={12}>
@@ -77,6 +85,20 @@ export default function Register() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                value={props.value.email}
+                onChange={handleKey}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="phone"
+                label="Phone Number"
+                name="phone"
+                onChange={handleKey}
+                value ={props.value.phoneNo}
               />
             </Grid>
             <Grid item xs={12}>
@@ -88,7 +110,8 @@ export default function Register() {
                 label="Password"
                 type="password"
                 id="password"
-                autoComplete="current-password"
+                value={props.value.PWD}
+                onChange={handleKey}
               />
             </Grid>
            

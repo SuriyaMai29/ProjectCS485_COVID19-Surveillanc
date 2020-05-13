@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
@@ -63,21 +63,25 @@ const useStyles = makeStyles((theme) => ({
 
 const steps = ['Register', 'Information', 'Review'];
 
-function getStepContent(step) {
+function getStepContent(step,state,setState) {
   switch (step) {
     case 0:
-      return <Register />;
+      return <Register value ={state} seting={setState}/>;
     case 1:
-      return <Information
-     />;
+      return <Information  value ={state} seting={setState}/>;
     case 2:
-      return <Review />;
+      return <Review  value ={state} />;
     default:
       throw new Error('Unknown step');
   }
 }
 
 export default function SingUpSide() {
+  const [regisInfo,setRegisInfo]= useState({
+    fname:'',lname:'',email:'',PWD:'',
+    citizen:'',age:'',sex:'Men',city:'',
+    province:'',country:'',zip:'',addr:'',phoneNo:'',
+  })
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
 
@@ -116,7 +120,7 @@ export default function SingUpSide() {
               </React.Fragment>
             ) : (
               <React.Fragment >
-                {getStepContent(activeStep)}
+                {getStepContent(activeStep,regisInfo,setRegisInfo)}
                 <div  style={{marginRight:'15px'}} className={classes.buttons}>
                   {activeStep !== 0 && (
                     <Button onClick={handleBack} className={classes.button}>

@@ -6,37 +6,44 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Grid from '@material-ui/core/Grid';
 
-const products = [
-  { name: 'Product 1', desc: 'A nice thing', price: '$9.99' },
-  { name: 'Product 2', desc: 'Another thing', price: '$3.45' },
-  { name: 'Product 3', desc: 'Something else', price: '$6.51' },
-  { name: 'Product 4', desc: 'Best thing of all', price: '$14.11' },
-  { name: 'Shipping', desc: '', price: 'Free' },
-];
-const addresses = ['1 Material-UI Drive', 'Reactville', 'Anytown', '99999', 'USA'];
-const payments = [
-  { name: 'Card type', detail: 'Visa' },
-  { name: 'Card holder', detail: 'Mr John Smith' },
-  { name: 'Card number', detail: 'xxxx-xxxx-xxxx-1234' },
-  { name: 'Expiry date', detail: '04/2024' },
-];
 
-const useStyles = makeStyles((theme) => ({
-  listItem: {
-    padding: theme.spacing(1, 0),
-  },
-  total: {
-    fontWeight: 700,
-  },
-  title: {
-    marginTop: theme.spacing(2),
-  },
-}));
 
-export default function Review() {
-  const classes = useStyles();
 
-  return (
-   <h1>hello world</h1>
-  );
+export default function Review(props) {
+  
+
+  return (<>
+
+    <table>
+      <tr> 
+        <th style={{border: '1px solid black'}}>Name</th>
+        <td style={{border: '1px solid black'}}>{props.value.fname} {props.value.lname}</td>
+      </tr> 
+      <tr>
+        <th style={{border: '1px solid black'}}>Email</th>
+        <td style={{border: '1px solid black'}}>{props.value.email}</td>
+      </tr>
+      <tr >
+        <th style={{border: '1px solid black'}}>Phone Number</th>
+        <td style={{border: '1px solid black'}}>{props.value.phoneNo}</td>
+      </tr>
+      <tr>
+        <th style={{border: '1px solid black'}} >Password</th>
+        <td style={{border: '1px solid black'}}>{props.value.PWD}</td>
+      </tr>
+      <tr>
+        <th style={{border: '1px solid black'}}>Citizen ID or Passport</th>
+        <td style={{border: '1px solid black'}}>{props.value.citizen}</td>
+      </tr>
+      <tr>
+        <th style={{border: '1px solid black'}}>Age/Sex</th>
+        <td style={{border: '1px solid black'}}>{props.value.age}/{props.value.sex}</td>
+      </tr>
+      <tr>
+        <th style={{border: '1px solid black'}}>Address</th>
+        <td style={{border: '1px solid black'}}>{props.value.addr}/{props.value.city}/{props.value.province}/
+        {props.value.country}/{props.value.zip}</td>
+      </tr>
+    </table>
+  </>);
 }
