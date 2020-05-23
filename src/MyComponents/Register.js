@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import Debug from '../Debug'
+
 
 
 
@@ -46,7 +46,6 @@ export default function Register(props) {
 
   return (
     <Container component="main" maxWidth="xs">
-      <Debug Obj={props.value}/>
       <div  style={{marginTop:'2px'}}className={classes.paper}>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>

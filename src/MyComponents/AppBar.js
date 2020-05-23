@@ -4,15 +4,15 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
+
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
+
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import MailIcon from '@material-ui/icons/Mail';
-import NotificationsIcon from '@material-ui/icons/Notifications';
+
+
 import MoreIcon from '@material-ui/icons/MoreVert';
 import clsx from 'clsx';
 import Drawer from '@material-ui/core/Drawer';
@@ -21,7 +21,7 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
+import { useHistory } from "react-router-dom";
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import HomeIcon from '@material-ui/icons/Home';
 import NoteAddIcon from '@material-ui/icons/NoteAdd';
@@ -126,6 +126,20 @@ export default function PrimarySearchAppBar() {
     const handleMobileMenuOpen = (event) => {
         setMobileMoreAnchorEl(event.currentTarget);
     };
+    const history = useHistory();
+    const routeDaily = () =>{ 
+        let path = `/dailymedicalchecking`; 
+        history.push(path);
+      }
+      const routeHome = () =>{ 
+        let path = `/`; 
+        history.push(path);
+      }
+      const routeRouteTo = () =>{ 
+        let path = `/routeto`; 
+        history.push(path);
+      }
+
 
     const menuId = 'primary-search-account-menu';
     const renderMenu = (
@@ -193,13 +207,25 @@ export default function PrimarySearchAppBar() {
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-                {['Home', 'Daily Medical Checking', 'Route to', 'Activity Log'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index === 0 ? <HomeIcon /> : index === 1 ? <NoteAddIcon /> :
-                            index == 2 ? <CommuteIcon /> : <HistoryIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+             
+            <ListItem button key='Home' onClick={routeHome}> 
+                        <ListItemIcon><HomeIcon /></ListItemIcon>
+                        <ListItemText primary='Home' />
+            </ListItem>
+            
+            <ListItem button key='Daily Medical Checking' onClick={routeDaily}>
+                        <ListItemIcon><NoteAddIcon></NoteAddIcon></ListItemIcon>
+                        <ListItemText primary='Daily Medical Checking' />
+            </ListItem>
+            
+                <ListItem button key='Route to' onClick={routeRouteTo}> 
+                        <ListItemIcon><HomeIcon /></ListItemIcon>
+                        <ListItemText primary='Route to' />
+            </ListItem>
+            <ListItem button key='Activity Log'>
+                        <ListItemIcon><HomeIcon /></ListItemIcon>
+                        <ListItemText primary='Activity Log' />
+            </ListItem>
             </List>
             <Divider />
             <List>
