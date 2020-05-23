@@ -39,6 +39,7 @@ export default function SimpleBottomNavigation() {
       }}
       showLabels
       className={classes.root}
+      style={{marginTop:'1%'}}
     >
       <BottomNavigationAction label="Daily Medical Checking" icon={<NoteAddIcon />}  onClick={routeDaily}/>
       <BottomNavigationAction label="Route to" icon={<CommuteIcon />} onClick={routeRouteTo} />

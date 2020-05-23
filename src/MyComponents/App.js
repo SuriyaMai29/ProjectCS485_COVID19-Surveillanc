@@ -6,10 +6,13 @@ import Home from './Home'
 import RouteTo from './Route'
 import DailyMedicalChecking from './DailyMedicalChecking'
 import ActivityLog from './ActivityLog'
+import SimpleBottomNavigation from './SimpleBottomNavigation'
 export default function App(){
     return(<Router>
         <div className='App'>
         <AppBar/>
+        <SimpleBottomNavigation></SimpleBottomNavigation>
+        <br></br>
         <Switch>
         <Route path='/' exact component={Home}/>   
         <Route path='/dailymedicalchecking' component={DailyMedicalChecking}/>

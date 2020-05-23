@@ -10,7 +10,7 @@ export default function CovidInFoByDate(state,setState){
         const arr =[]
          res.Data.map(ele=>{
              //  setSearches(searches => [...searches, query])
-                //if(isGoodDate(ele.Date)) 
+                if(isGoodDate(ele.Date)) 
                 arr.push({Date:ele.Date,NewConfirmed:ele.NewConfirmed})
                 
          })

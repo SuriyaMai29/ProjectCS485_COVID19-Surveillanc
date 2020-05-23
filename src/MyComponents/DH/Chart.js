@@ -3,12 +3,6 @@ import { useTheme } from '@material-ui/core/styles';
 import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
 import Title from './Title';
 import CovidInfo from '../../Utils/CovidInFoByDate'
-// Generate Sales Data
-function createData(time, amount) {
-  return { time, amount };
-}
-
-
 
 export default function Chart() {
   const theme = useTheme();
@@ -17,8 +11,8 @@ export default function Chart() {
      CovidInfo(Dates,setDate) 
 },[])
   return (
-    <React.Fragment>
-      <Title>Today</Title>
+     <React.Fragment >
+      <Title>May 2020</Title>
       <ResponsiveContainer>
         <LineChart
           data={Dates}
