@@ -8,7 +8,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
-import Debug from './Debug'
+
 
 const useStyles = makeStyles((theme) => ({
     root: {

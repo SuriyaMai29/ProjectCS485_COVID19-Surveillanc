@@ -23,11 +23,14 @@ export default function SimpleBottomNavigation() {
     let path = `/dailymedicalchecking`; 
     history.push(path);
   }
-  const routeRouteTo = () =>{ 
+  const routeRouteTo=()=>{ 
     let path = `/routeto`; 
     history.push(path);
   }
-
+  const routeActivityLog=()=>{ 
+    let path = `/activitylog`; 
+    history.push(path);
+  }
   return (
     <BottomNavigation
       value={value}
@@ -38,8 +41,8 @@ export default function SimpleBottomNavigation() {
       className={classes.root}
     >
       <BottomNavigationAction label="Daily Medical Checking" icon={<NoteAddIcon />}  onClick={routeDaily}/>
-    <BottomNavigationAction label="Route to" icon={<CommuteIcon />} onClick={routeRouteTo} />
-      <BottomNavigationAction label="Activity Log" icon={<HistoryIcon />} />
+      <BottomNavigationAction label="Route to" icon={<CommuteIcon />} onClick={routeRouteTo} />
+      <BottomNavigationAction label="Activity Log" icon={<HistoryIcon /> }  onClick={routeActivityLog}/>
     </BottomNavigation>
   );
 }

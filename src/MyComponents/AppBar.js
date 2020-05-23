@@ -139,6 +139,11 @@ export default function PrimarySearchAppBar() {
         let path = `/routeto`; 
         history.push(path);
       }
+      const routeActivityLog = () =>{ 
+        let path = `/activitylog`; 
+        history.push(path);
+      }
+
 
 
     const menuId = 'primary-search-account-menu';
@@ -219,11 +224,11 @@ export default function PrimarySearchAppBar() {
             </ListItem>
             
                 <ListItem button key='Route to' onClick={routeRouteTo}> 
-                        <ListItemIcon><HomeIcon /></ListItemIcon>
+                        <ListItemIcon><CommuteIcon /></ListItemIcon>
                         <ListItemText primary='Route to' />
             </ListItem>
-            <ListItem button key='Activity Log'>
-                        <ListItemIcon><HomeIcon /></ListItemIcon>
+            <ListItem button key='Activity Log' onClick={routeActivityLog}>
+                        <ListItemIcon><HistoryIcon /></ListItemIcon>
                         <ListItemText primary='Activity Log' />
             </ListItem>
             </List>
